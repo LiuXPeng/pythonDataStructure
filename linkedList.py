@@ -11,7 +11,7 @@ class LinkNode(object):
 		self.next = None
 
 
-class linkList(object):
+class LinkList(object):
 	def __init__(self):
 		self.head = None
 		self.length = 0
@@ -40,12 +40,12 @@ class linkList(object):
 			self.length = self.length + 1
 
 	def getNode(self, index):
-		if index > length or index < 1:
+		if index > self.length - 1 or index < 0:
 			return None
-		pre = self.head
-		for x in range(index - 1):
-			pre = pre.next
-		return pre.data
+		loc = self.head
+		for x in range(index):
+			loc = loc.next
+		return loc.data
 
 	def insert(self, data, index):
 		node = LinkNode(data)
@@ -77,19 +77,12 @@ class linkList(object):
 			pre = pre.next
 		pre.next = pre.next.next
 			
-
-					
-
-
+				
 #test
-L = linkList()
+L = LinkList()
 for i in range(10):
 	L.add(i)
 #L.insert(11, 11)
+print(L.getNode(2))
 L.delete(10)
 L.printList()
-			
-
-
-
-		
