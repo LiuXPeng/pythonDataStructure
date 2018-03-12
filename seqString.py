@@ -55,7 +55,7 @@ def isSeqStr(S):
 	return isinstance(S, SeqString)
 
 def strCopy(T, S):
-	if !isSeqStr(S) or !isSeqStr(T):
+	if not isSeqStr(S) or not isSeqStr(T):
 		return
 	S.length = min(S.maxSize, T.length)
 	for x in S.length:
@@ -66,7 +66,7 @@ def strAssign(data):
 	return T = SeqString(data, len(data))
 
 def strCompare(T, S):
-	if !isSeqStr(S) or !isSeqStr(T):
+	if not isSeqStr(S) or not isSeqStr(T):
 		return
 	for x in range(min(T.length, S.length)):
 		if T.data[x + 1] > S.data[x + 1]:
@@ -89,7 +89,7 @@ def concat(S1, S2):
 	return T
 
 def subStr(S, pos, length):
-	if !isSeqStr(S) or pos < 1 or pos > S.strLen() or length < 0 or length + pos - 1 > S.strLen():
+	if not isSeqStr(S) or pos < 1 or pos > S.strLen() or length < 0 or length + pos - 1 > S.strLen():
 		return
 	sub = SeqString(length)
 	for i in range(length):
@@ -97,7 +97,7 @@ def subStr(S, pos, length):
 	return sub
 
 def index(S, T, pos = 1):
-	if !isSeqStr(S) or !isSeqStr(T) or pos > S.length - T.length:
+	if not isSeqStr(S) or not isSeqStr(T) or pos > S.length - T.length:
 		return
 	if S.length < T.length:
 		return
@@ -105,7 +105,7 @@ def index(S, T, pos = 1):
 		if x < pos - 1:
 			break
 		for i in range(T.length):
-			if (S.data[x + i + 1] != T.data[i + 1]):
+			if (S.data[x + i + 1] not = T.data[i + 1]):
 				break
 			if i == T.length - 1:
 				return x
@@ -113,7 +113,7 @@ def index(S, T, pos = 1):
 
 def replace(S, T, V):
 	pos = index(S, T)
-	while pos != None:
+	while pos not = None:
 		if S.length - T.length + V.length > S.maxSize:
 			return
 		for x in range(T.length):
@@ -124,14 +124,14 @@ def replace(S, T, V):
 	return
 
 def strInsert(S, pos, T):
-	if !isSeqStr(S) or !isSeqStr(T) or S.length + T.length > S.maxSize or pos < 1 or pos > S.length:
+	if not isSeqStr(S) or not isSeqStr(T) or S.length + T.length > S.maxSize or pos < 1 or pos > S.length:
 		return
 	for x in range(T.length):
 		S.add(T.data[x + 1], pos + x)
 	return
 
 def strDelete(S, pos, length):
-	if !isSeqStr(S) or pos < 1:
+	if not isSeqStr(S) or pos < 1:
 		return
 	if pos + length > S.length + 1:
 		return
