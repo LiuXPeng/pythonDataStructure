@@ -8,7 +8,7 @@ __author__ = 'lxp'
 #实现《大话数据结构》128页“串”结构，书中每个函数绝大部分有函数说明
 
 class SeqString(object):
-	def __init__(self, maxSize = 100, data = ""):##
+	def __init__(self, maxSize = 30, data = ""):##
 		self.data = [None] * (maxSize + 1)
 		self.data[0] = max(maxSize, len(data))
 		self.length = 0
@@ -151,7 +151,7 @@ def strDelete(S, pos, length):
 	
 
 #test
-L = SeqString(data = 'abcdefgabcdefgabcdefgabcdefg')
+L = SeqString(100, data = 'abcdefgabcdefgabcdefgabcdefg')
 L.showStr()
 print('')
 
@@ -229,7 +229,7 @@ print('B')
 C.showStr()
 print('C')
 print('=============')
-D = SeqString(data='XXXXXX')
+D = SeqString(data = 'XXXXXX')
 L.showStr()
 print('L')
 replace(L, A, D)
