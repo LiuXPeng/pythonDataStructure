@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-'kmp algorithm'
+'improvement kmp algorithm'
 
 __author__ = 'lxp'
 
@@ -73,7 +73,10 @@ def getNext(T):
 		if j == 0 or T.data[i] == T.data[j]:
 			i = i + 1
 			j = j + 1
-			res.append(j)
+			if T.data[i] == T.data[j]:
+				res.append(res[j - 1])
+			else:
+				res.append(j)
 		else:
 			j = res[j - 1]
 	return res
@@ -94,7 +97,7 @@ def index(S, T, pos = 1):
 
 
 #test
-S = strAssign('aadad')
+S = strAssign('aagfasfsdfsdadad')
 T = strAssign('ad')
 #print(getNext(T))
 print(index(S, T))
