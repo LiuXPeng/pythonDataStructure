@@ -68,11 +68,34 @@ def strAssign(data):
 '''
 def getNext(T):
 	res = [0]
-	i, j = 1, j = 0
+	i, j = 1, 0
 	while i < T.length:
 		if j == 0 or T.data[i] == T.data[j]:
 			i = i + 1
 			j = j + 1
 			res.append(j)
 		else:
-			j = res[j]
+			j = res[j - 1]
+	return res
+
+def index(S, T, pos = 1):
+	nextIndex = getNext(T)
+	i = pos
+	j = 1
+	while i <= S.length and j <= T.length:
+		if S.data[i] == T.data[j] or j == 0:
+			i = i + 1
+			j = j + 1
+		else:
+			j = nextIndex[j - 1]
+	if j > T.length:
+		return i - T.length
+	return None
+
+
+#test
+S = strAssign('ababacdfaedod')
+T = strAssign('')
+#print(getNext(T))
+print(index(S, T))
+print(index(S, S))
