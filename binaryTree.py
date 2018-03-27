@@ -52,6 +52,23 @@ class BiTree(object):
 		method(self.head)
 		print()
 
+#层序遍历
+	def levelOrderTraverse(self):
+		def method(L):
+			while len(L) != 0 and L[0] == None:#这样某个子树为空，可以跳过
+				del L[0]
+			if len(L) == 0:
+				return
+			print(L[0].data, ',', end = '')
+			L.append(L[0].lchild)
+			L.append(L[0].rchild)
+			del L[0]
+			method(L)
+
+		L = []
+		L.append(self.head)
+		method(L)
+		print()
 
 #test
 A = BitNode('A')
@@ -76,3 +93,4 @@ tree.head = A
 tree.preOrderTraverse()
 tree.inOrderTraverse()
 tree.postOrderTraverse()
+tree.levelOrderTraverse()
