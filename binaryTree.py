@@ -70,6 +70,42 @@ class BiTree(object):
 		method(L)
 		print()
 
+#前序插入二叉树
+def preOrderCreate(S):
+	def method(S):
+		if len(S) == 0:
+			return
+		if S[0] == '#':
+			del S[0]
+			return
+		child = BitNode(S[0])
+		del S[0]
+		child.lchild = method(S)
+		child.rchild = method(S)
+		return child
+	T = BiTree()
+	T.head = method(S)
+	return T
+
+# 错误示范
+'''
+#前序插入二叉树
+def preOrderCreate(S):
+	def method(S, child):
+		if len(S) == 0:
+			return
+		if S[0] == '#':
+			del S[0]
+			return
+		child = BitNode(S[0])
+		del S[0]
+		method(S, child.lchild)
+		method(S, child.rchild)
+		return
+	T = BiTree()
+	method(S, T.head)
+	return T
+'''
 #test
 A = BitNode('A')
 B = BitNode('B')
@@ -94,3 +130,6 @@ tree.preOrderTraverse()
 tree.inOrderTraverse()
 tree.postOrderTraverse()
 tree.levelOrderTraverse()
+S = ['A', 'B', '#', 'D', '#', '#', 'C', '#', '#']
+T = preOrderCreate(S)
+T.preOrderTraverse()
