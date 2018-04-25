@@ -106,30 +106,33 @@ def preOrderCreate(S):
 	method(S, T.head)
 	return T
 '''
-#test
-A = BitNode('A')
-B = BitNode('B')
-C = BitNode('C')
-D = BitNode('D')
-E = BitNode('E')
-F = BitNode('F')
-G = BitNode('G')
-H = BitNode('H')
-I = BitNode('I')
-A.lchild = B
-A.rchild = C
-B.lchild = D
-C.lchild = E
-C.rchild = F
-D.lchild = G
-D.rchild = H
-E.rchild = I
-tree = BiTree()
-tree.head = A
-tree.preOrderTraverse()
-tree.inOrderTraverse()
-tree.postOrderTraverse()
-tree.levelOrderTraverse()
-S = ['A', 'B', '#', 'D', '#', '#', 'C', '#', '#']
-T = preOrderCreate(S)
-T.preOrderTraverse()
+def test():
+	A = BitNode('A')
+	B = BitNode('B')
+	C = BitNode('C')
+	D = BitNode('D')
+	E = BitNode('E')
+	F = BitNode('F')
+	G = BitNode('G')
+	H = BitNode('H')
+	I = BitNode('I')
+	A.lchild = B
+	A.rchild = C
+	B.lchild = D
+	C.lchild = E
+	C.rchild = F
+	D.lchild = G
+	D.rchild = H
+	E.rchild = I
+	tree = BiTree()
+	tree.head = A
+	tree.preOrderTraverse()
+	tree.inOrderTraverse()
+	tree.postOrderTraverse()
+	tree.levelOrderTraverse()
+	S = ['A', 'B', '#', 'D', '#', '#', 'C', '#', '#']
+	T = preOrderCreate(S)
+	T.preOrderTraverse()
+
+if __name__ == '__main__':
+	test()
