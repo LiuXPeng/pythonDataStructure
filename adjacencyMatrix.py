@@ -9,7 +9,7 @@ __author__ = 'lxp'
 
 import numpy as np
 
-class MGraph():
+class MGraph(object):
 	def __init__(self):
 		self.vexs = []
 		self.arc = None
@@ -17,14 +17,19 @@ class MGraph():
 		self.numEdges = 0
 
 	def createMGraph(self):
-		self.numVertexes = int(input("请输入点数"))
-		self.numEdges = int(input("请输入边数"))
+		self.numVertexes = int(input("请输入点数: "))
+		self.numEdges = int(input("请输入边数: "))
 		self.arc = np.zeros([self.numVertexes, self.numVertexes])
+
+		for x in range(self.numVertexes):
+			self.vexs.append(int(input("顶点下标: ")))
+
 		for x in range(self.numEdges):
-			vi = int(input("请输入边（vi, vj）的下标i"))
-			vj = int(input("请输入边（vi, vj）的下标j"))
-			w = int(input("请输入边（vi, vj）的权重w"))
+			vi = int(input("请输入边（vi, vj）的下标i: "))
+			vj = int(input("请输入边（vi, vj）的下标j: "))
+			w = int(input("请输入边（vi, vj）的权重w: "))
 			self.arc[vi][vj] = self.arc[vj][vi] = w
+			
 		return
 
 	def showMGraph(self):
@@ -41,4 +46,4 @@ def test():
 if __name__ == '__main__':
 	test()
 
-
+###input输入的是str，需要转换
