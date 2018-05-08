@@ -14,9 +14,9 @@ class EdgeNode(object):
 		self.next = None
 
 class VertexNode(object):
-	def __init__(self):
-		self.data = None
-		self.edgeNode = None
+	def __init__(self, data = None):
+		self.data = data
+		self.firstedge = None
 
 class GraphAdjList(object):
 	def __init__(self):
@@ -29,5 +29,32 @@ class GraphAdjList(object):
 		self.numEdges = int(input("请输入边数： "))
 
 		for x in range(self.numVertexes):
-			self.nodeList.append()	
+			self.nodeList.append(VertexNode(int(input("请输入顶点信息"))))
+
+		for x in range(self.numEdges):
+			i = int(input("请输入vi的i"))
+			j = int(input("请输入vj的j"))
+			e = edgeNode()
+			e.adjvex = j
+			e.next = self.nodeList[i].firstedge
+			self.nodeList[i].firstedge = e
+			e.adjvex = i
+			e = edgeNode()
+			e.adjvex = i
+			e.next = self.nodeList[j].firstedge
+			self.nodeList[j].firstedge = e
+
+	def showGraph(self):
+		for L in self.nodeList:
+			pass
+		return
+#test
+def test():
+	sample = GraphAdjList()
+	sample.createALGraph()
+	sample.showMGraph()
+	return
+
+if __name__ == '__main__':
+	test()
 
