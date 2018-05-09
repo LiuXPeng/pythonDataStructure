@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-'Adjacency List'
+'adjacency list'
 
 __author__ = 'lxp'
 
@@ -29,30 +29,34 @@ class GraphAdjList(object):
 		self.numEdges = int(input("请输入边数： "))
 
 		for x in range(self.numVertexes):
-			self.nodeList.append(VertexNode(int(input("请输入顶点信息"))))
+			self.nodeList.append(VertexNode(input("请输入顶点信息")))
 
 		for x in range(self.numEdges):
 			i = int(input("请输入vi的i"))
 			j = int(input("请输入vj的j"))
-			e = edgeNode()
+			e = EdgeNode()
 			e.adjvex = j
 			e.next = self.nodeList[i].firstedge
 			self.nodeList[i].firstedge = e
-			e.adjvex = i
-			e = edgeNode()
+			e = EdgeNode()
 			e.adjvex = i
 			e.next = self.nodeList[j].firstedge
 			self.nodeList[j].firstedge = e
 
 	def showGraph(self):
 		for L in self.nodeList:
-			pass
+			print(L.data, ' ', end = '')
+			index = L.firstedge
+			while index != None:
+				print(index.adjvex, ' ', end = '')
+				index = index.next
+			print('\n')
 		return
 #test
 def test():
 	sample = GraphAdjList()
 	sample.createALGraph()
-	sample.showMGraph()
+	sample.showGraph()
 	return
 
 if __name__ == '__main__':
