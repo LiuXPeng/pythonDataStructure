@@ -5,7 +5,7 @@
 
 __author__ = 'lxp'
 
-#《大话数据结构》240页
+#《大话数据结构》240页，基于邻接矩阵的深度优先遍历
 
 import adjacencyMatrix
 
