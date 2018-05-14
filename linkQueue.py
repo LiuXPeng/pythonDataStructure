@@ -38,19 +38,23 @@ class LinkQueue(object):
 
 
 #test
-L = LinkQueue()
+def test():
+	L = LinkQueue()
 
-for x in range(10):
-	L.enQue(x)
-L.showQue()
-print(' ')
+	for x in range(10):
+		L.enQue(x)
+	L.showQue()
+	print(' ')
 
-for x in range(8):
-	print(L.deQue())
-L.showQue()
-print(' ')
+	for x in range(8):
+		print(L.deQue())
+	L.showQue()
+	print(' ')
 
-for x in range(10):
-	L.enQue(x + 10)
-L.showQue()
-print(' ')
+	for x in range(10):
+		L.enQue(x + 10)
+	L.showQue()
+	print(' ')
+
+if __name__ == '__main__':
+	test()
