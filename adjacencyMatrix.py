@@ -5,7 +5,7 @@
 
 __author__ = 'lxp'
 
-#《大话数据结构》227页
+#《大话数据结构》227页，基于邻接矩阵的深度优先遍历
 
 import numpy as np
 
@@ -22,7 +22,7 @@ class MGraph(object):
 		self.arc = np.zeros([self.numVertexes, self.numVertexes])
 
 		for x in range(self.numVertexes):
-			self.vexs.append(int(input("顶点下标: ")))
+			self.vexs.append(input("依次输入顶点信息: "))
 
 		for x in range(self.numEdges):
 			vi = int(input("请输入边（vi, vj）的下标i: "))
