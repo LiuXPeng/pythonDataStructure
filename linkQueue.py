@@ -36,11 +36,16 @@ class LinkQueue(object):
 			loc = loc.next
 		return
 
+	def quenueEmpty(self):
+		if self.front.next == None:
+			return True
+		return False
+
 
 #test
 def test():
 	L = LinkQueue()
-
+	print(L.quenueEmpty())
 	for x in range(10):
 		L.enQue(x)
 	L.showQue()
@@ -55,6 +60,6 @@ def test():
 		L.enQue(x + 10)
 	L.showQue()
 	print(' ')
-
+	print(L.quenueEmpty())
 if __name__ == '__main__':
 	test()
