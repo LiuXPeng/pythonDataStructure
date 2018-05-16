@@ -24,6 +24,11 @@ class MGraph(object):
 		for x in range(self.numVertexes):
 			self.vexs.append(input("依次输入顶点信息: "))
 
+		for i in range(self.numVertexes):
+			for j in range(self.numVertexes):
+				if i != j:
+					self.arc[i][j] = float("inf")
+
 		for x in range(self.numEdges):
 			vi = int(input("请输入边（vi, vj）的下标i: "))
 			vj = int(input("请输入边（vi, vj）的下标j: "))
