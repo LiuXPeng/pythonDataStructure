@@ -25,6 +25,18 @@ def shortestPath_Floyd(G):
 					D[v][w] = D[v][k] + D[k][w]
 					P[v][w] = P[v][k]
 
+	for v in range(G.numVertexes):
+		for w in range(v + 1, G.numVertexes):
+			print(v, 'to', w, ', weight:', D[v][w], end = '')
+			k = P[v][w]
+			print(', path:', v, '', end = '')
+			while k != w:
+				k = int(k)
+				print('->', k, end = '')
+				k = P[k][w]
+			print('->', w)
+
+
 	return D, P
 
 
