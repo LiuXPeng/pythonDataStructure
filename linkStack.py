@@ -40,9 +40,14 @@ class LinkStack(object):
 
 
 #test
-L = LinkStack()
-for x in range(10):
-	L.push(x)
-	if x % 3 == 0:
-		print(L.pop())
-L.showStack()
+def test():
+	L = LinkStack()
+	for x in range(10):
+		L.push(x)
+		if x % 3 == 0:
+			print(L.pop())
+	L.showStack()
+	return
+
+if __name__ == '__main__':
+	test()
