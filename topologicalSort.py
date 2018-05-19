@@ -16,9 +16,9 @@ class EdgeNode(object):
 		self.next = None
 
 class VertexNode(object):
-	def __init__(self):
+	def __init__(self, data = None):
 		self.in_ = 0
-		self.data = None
+		self.data = data
 		self.firstedge = None
 
 class GraphAdjList(object):
@@ -41,11 +41,17 @@ class GraphAdjList(object):
 			e.adjvex = j
 			e.next = self.nodeList[i].firstedge
 			self.nodeList[i].firstedge = e
-			e = EdgeNode()
-			e.adjvex = i
-			e.next = self.nodeList[j].firstedge
-			self.nodeList[j].firstedge = e
 			self.nodeList[j].in_ = self.nodeList[j].in_ + 1
+
+	def showGraph(self):
+		for L in self.nodeList:
+			print(L.data, ', 入度：', L.in_, ', ', end = '')
+			index = L.firstedge
+			while index != None:
+				print(index.adjvex, ' ', end = '')
+				index = index.next
+			print('\n')
+		return
 
 def topologicalSort(GL):
 	top = 0
@@ -63,20 +69,22 @@ def topologicalSort(GL):
 		e = GL.nodeList[gettop].firstedge
 		while e:
 			k = e.adjvex
+			GL.nodeList[k].in_ = GL.nodeList[k].in_ - 1
 			if not GL.nodeList[k].in_:
-				stack.puss(k)
+				stack.push(k)
 				top = top + 1
 			e = e.next
 
-		if count < GL.numVertexes:
-			print("图中有环")
-			return
+	if count < GL.numVertexes:
+		print("图中有环")
 	return
 
 
 #test
 def test():
 	sample = GraphAdjList()
+	sample.createALGraph()
+	sample.showGraph()
 	topologicalSort(sample)
 	return
 
