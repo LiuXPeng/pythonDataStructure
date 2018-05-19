@@ -52,6 +52,8 @@ class GraphAdjList(object):
 				index = index.next
 			print('\n')
 		return
+
+		
 #test
 def test():
 	sample = GraphAdjList()
