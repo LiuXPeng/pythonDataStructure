@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-' critical path of networked'
+'critical path of networked'
 
 __author__ = 'lxp'
 
@@ -64,7 +64,7 @@ def topologicalSort(GL):
 			stack.push(i)
 			top = top + 1
 	top2 = 0
-	stv = [0] * GL.numVertexes
+	etv = [0] * GL.numVertexes
 	stack2 = linkStack.LinkStack()
 	while top != 0:
 		gettop = stack.pop()
@@ -79,7 +79,7 @@ def topologicalSort(GL):
 			if GL.nodeList[k].in_ == 0:
 				stack.push(k)
 				top = top + 1
-			if etc[gettop] + e.weight > etv[k]:
+			if etv[gettop] + e.weight > etv[k]:
 				etv[k] = etv[gettop] + e.weight
 			e = e.next
 
@@ -90,7 +90,7 @@ def topologicalSort(GL):
 def criticalPath(GL):
 	etv, stack2, top2 = topologicalSort(GL)
 	ltv = []
-	for i in GL.numVertexes:
+	for i in range(GL.numVertexes):
 		ltv.append(etv[GL.numVertexes - 1])
 	while top2 != 0:
 		gettop = stack2.pop()
