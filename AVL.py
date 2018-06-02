@@ -15,14 +15,12 @@ class BiTNode(object):
 		self.rchild = None
 
 def r_Rotate(p):
-	L = BiTNode()
 	L = p.lchild
 	p.lchild = L.rchild
 	L.rchild = p
 	return L
 
 def l_Rotate(p):
-	R = BiTNode()
 	R = p.rchild
 	p.rchild = R.lchild
 	R.lchild = p
@@ -33,14 +31,17 @@ def leftBalance(T):
 	if L.bf == 1:
 		T.bf = L.bf = 0
 		T = r_Rotate(T)
-	elif L.bf == 0:
+	elif L.bf == -1:
 		Lr = L.rchild
 		if Lr.bf == 1:
+			T.bf = -1
 			L.bf = 0
-		elif L.bf == 0:
-			pass
+		elif Lr.bf == 0:
+			L.bf = 0
+			T.bf = 0
 		else:
 			L.bf = 1
+			T.bf = 0
 		Lr.bf = 0
 		T.lchild = l_Rotate(T.lchild)
 		T = r_Rotate(T)
@@ -54,11 +55,14 @@ def rightBalance(T):
 	if R.bf == 1:
 		Rl = R.lchild
 		if Rl.bf == -1:
+			T.bf = 1
 			R.bf = 0
 		elif Rl.bf == 0:
-			pass
+			T.bf = 0
+			R.bf = 0
 		else:
-			R.bf == -1
+			R.bf = -1
+			T.bf = 0
 		Rl.bf = 0
 		T.rchild = r_Rotate(T.rchild)
 		T = l_Rotate(T)
@@ -128,7 +132,7 @@ def showTree(T):
 			
 #test
 def test():
-	L = [3, 2, 1, 4, 5, 6, 7, 10, 9, 8]
+	L = [5, 6, 7, 3, 4, 10, 9, 8, 2, 1]
 	T = None
 	for i in L:
 		T, e, taller, mark = insertAVL(T, i, False, False)
