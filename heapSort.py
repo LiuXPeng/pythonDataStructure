@@ -26,8 +26,8 @@ def swap(L, i, j):
 	L.r[j] = temp
 
 def heapSort(L):
-	for i in range(int(L.length / 2), 0, -1):
-		heapAdjust(L, i, L.length)
+	for i in range(int((L.length -1) / 2), 0, -1):
+		heapAdjust(L, i, (L.length - 1))
 
 	for i in range(L.length - 1, 1, -1):
 		swap(L, 1, i)
