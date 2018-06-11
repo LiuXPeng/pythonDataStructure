@@ -5,6 +5,8 @@
 
 __author__ = 'lxp'
 
+#《大话数据结构》95页
+
 class DoubStack(object):
 	def __init__(self, maxSize = 30):
 		self.top0 = 0
@@ -39,28 +41,30 @@ class DoubStack(object):
 
 	def showStack(self):
 		for x in range(self.top0):
-			print(self.data[x], ' ', end = '')
+			print(self.data[x], ',', end = '')
 		print(' ')
 		for x in range(self.top1):
 			print(self.data[self.maxSize - x - 1],' ', end = '')
+		print('')
 		return
 
 
-
 #test
-#test
-L = DoubStack()
-for x in range(10):
-	L.push(x)
-	if x % 3 == 0:
-		print(L.pop())
+def test():
+	L = DoubStack()
+	for x in range(10):
+		L.push(x)
+		if x % 3 == 0:
+			print(L.pop())
 
-for x in range(10):
-	L.push(100 - x, 1)
-	if x % 3 == 0:
-		print(L.pop(1))
+	for x in range(10):
+		L.push(100 - x, 1)
+		if x % 3 == 0:
+			print(L.pop(1))
 
+	L.showStack()
 
-L.showStack()
+if __name__ == '__main__':
+	test()
 
 		
