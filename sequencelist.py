@@ -5,6 +5,8 @@
 
 __author__ = 'lxp'
 
+#《大话数据结构》48页
+
 class Seqlist(object):
 	def __init__(self, maxsize = 30):
 		self.maxsize = maxsize
@@ -13,12 +15,13 @@ class Seqlist(object):
 
 	def showlist(self):
 		for i in range(self.length):
-			print(self.data[i])
+			print(self.data[i], ',', end = '')
+		print('')			
 
 	def add(self, data):
 		if self.length == self.maxsize:
 			return
-		self.data[i] = data
+		self.data[self.length] = data
 		self.length = self.length + 1
 
 	def insert(self, data, index):
@@ -43,11 +46,15 @@ class Seqlist(object):
 
 
 #test
-L = Seqlist(10)
-for i in range(8):
-	L.add(i)
-L.insert(100, 0)
-L.delete(100)
-L.showlist()
+def test():
+	L = Seqlist(10)
+	for i in range(8):
+		L.add(i)
+	L.insert(100, 0)
+	L.delete(100)
+	L.showlist()
 
-print(L.getNode(10))
+	print(L.getNode(8))
+
+if __name__ == '__main__':
+	test()
