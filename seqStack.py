@@ -5,6 +5,8 @@
 
 __author__ = 'lxp'
 
+#《大话数据结构》92页
+
 class SeqStack(object):
 	def __init__(self, maxSize = 30):
 		self.top = -1
@@ -28,14 +30,19 @@ class SeqStack(object):
 		#if top == -1:
 		#	return
 		for x in range(self.top):
-			print(self.data[x])
+			print(self.data[x], ',',end = '')
+		print('')
 		return
 
 
 #test
-L = SeqStack(100)
-for x in range(10):
-	L.push(x)
-	if x % 3 == 0:
-		print(L.pop())
-L.showStack()
+def test():
+	L = SeqStack(100)
+	for x in range(10):
+		L.push(x)
+		if x % 3 == 0:
+			print(L.pop())
+	L.showStack()
+
+if __name__ == '__main__':
+	test()
