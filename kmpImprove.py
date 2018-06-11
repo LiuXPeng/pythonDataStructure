@@ -5,7 +5,9 @@
 
 __author__ = 'lxp'
 
+#《大话数据结构》143页
 #基本结构参考sequence string
+
 class SeqString(object):
 	def __init__(self, maxSize = 30, data = ""):##
 		self.data = [None] * (maxSize + 1)
@@ -97,8 +99,12 @@ def index(S, T, pos = 1):
 
 
 #test
-S = strAssign('aagfasfsdfsdadad')
-T = strAssign('ad')
-#print(getNext(T))
-print(index(S, T))
-print(index(S, S))
+def test():
+	S = strAssign('aagfasfsdfsdadad')
+	T = strAssign('ad')
+	#print(getNext(T))
+	print(index(S, T))
+	print(index(S, S))
+
+if __name__ == '__main__':
+	test()
