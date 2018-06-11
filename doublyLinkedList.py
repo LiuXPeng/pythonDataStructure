@@ -5,6 +5,8 @@
 
 __author__ = 'lxp'
 
+#《大话数据结构》81页
+
 class Node(object):
 	def __init__(self, data):
 		self.data = data
@@ -75,15 +77,15 @@ class DoublyLinkedList(object):
 		return 
 
 
-
-
-
-
 #test
-L = DoublyLinkedList()
-for i in range(10):
-	L.add(i)
-L.insert(100, 0)
-print(L.getNode(2))
-L.delete(5)
-L.showList()
+def test():
+	L = DoublyLinkedList()
+	for i in range(10):
+		L.add(i)
+	L.insert(100, 0)
+	print(L.getNode(2))
+	L.delete(5)
+	L.showList()
+
+if __name__ == '__main__':
+	test()
