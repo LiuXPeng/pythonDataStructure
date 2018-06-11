@@ -35,6 +35,11 @@ def qSort(L, low, high):
 		qSort(L, pivot + 1, high)
 
 def partition(L, low, high):
+	m = int(low + (low + high) / 2)
+	if L.r[high] < m:
+		swap(L, high, m)
+	if L.r[low] < m:
+		swap(L, low, m)
 	pivotkey = L.r[low]
 	while low < high:
 		while low < high and L.r[high] >= pivotkey:
