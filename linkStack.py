@@ -5,6 +5,8 @@
 
 __author__ = 'lxp'
 
+#《大话数据结构》98页
+
 class Node(object):
 	def __init__(self, data):
 		self.data = data
@@ -35,8 +37,9 @@ class LinkStack(object):
 
 	def showStack(self):
 		for x in range(self.length):
-			print(self.top.data)
+			print(self.top.data, ',', end = '')
 			self.top = self.top.next
+		print('')
 
 
 #test
