@@ -3,6 +3,8 @@
 
 'linked list'
 
+#《大话数据结构》59页
+
 __author__ = 'lxp'
 
 class LinkNode(object):
@@ -79,10 +81,14 @@ class LinkList(object):
 			
 				
 #test
-L = LinkList()
-for i in range(10):
-	L.add(i)
-#L.insert(11, 11)
-print(L.getNode(2))
-L.delete(10)
-L.printList()
+def test():
+	L = LinkList()
+	for i in range(10):
+		L.add(i)
+	#L.insert(11, 11)
+	print(L.getNode(2))
+	L.delete(10)
+	L.printList()
+
+if __name__ == '__main__':
+	test()
