@@ -5,6 +5,8 @@
 
 __author__ = 'lxp'
 
+#《大话数据结构》80页
+
 class CirQueue(object):
 	def __init__(self, maxSize = 30):
 		self.rear = 0
@@ -42,19 +44,23 @@ class CirQueue(object):
 
 
 #test
-L = CirQueue(15)
+def test():
+	L = CirQueue(15)
 
-for x in range(10):
-	L.enQue(x)
-L.showQue()
-print(' ')
+	for x in range(10):
+		L.enQue(x)
+	L.showQue()
+	print(' ')
 
-for x in range(3):
-	print(L.deQue())
-L.showQue()
-print(' ')
+	for x in range(3):
+		print(L.deQue())
+	L.showQue()
+	print(' ')
 
-for x in range(10):
-	L.enQue(x + 10)
-L.showQue()
-print(' ')
+	for x in range(10):
+		L.enQue(x + 10)
+	L.showQue()
+	print(' ')
+
+if __name__ == '__main__':
+	test()
