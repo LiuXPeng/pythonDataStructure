@@ -5,6 +5,8 @@
 
 __author__ = 'lxp'
 
+#《大话数据结构》118页
+
 class Node(object):
 	def __init__(self, data):
 		self.next = None
@@ -32,7 +34,7 @@ class LinkQueue(object):
 	def showQue(self):
 		loc = self.front.next
 		while loc != None:
-			print(loc.data, ' ',end = '')
+			print(loc.data, ',',end = '')
 			loc = loc.next
 		return
 
@@ -61,5 +63,6 @@ def test():
 	L.showQue()
 	print(' ')
 	print(L.quenueEmpty())
+
 if __name__ == '__main__':
 	test()
