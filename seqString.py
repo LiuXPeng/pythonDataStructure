@@ -56,7 +56,8 @@ class SeqString(object):
 
 	def showStr(self):
 		for x in range(self.length):
-			print(self.data[x + 1],' ',end = '')
+			print(self.data[x + 1],',',end = '')
+		print('')
 
 def isSeqStr(S):
 	return isinstance(S, SeqString)
@@ -151,87 +152,70 @@ def strDelete(S, pos, length):
 	
 
 #test
-L = SeqString(100, data = 'abcdefgabcdefgabcdefgabcdefg')
-L.showStr()
-print('')
+def test():
+	L = SeqString(100, data = 'abcdefgabcdefgabcdefgabcdefg')
+	L.showStr()
 
-L.add('e',5)
-L.showStr()
-print('')
+	L.add('e',5)
+	L.showStr()
 
-L.delete(3)
-L.showStr()
-print('')
+	L.delete(3)
+	L.showStr()
 
-L.delete(3)
-L.showStr()
-print('')
+	L.delete(3)
+	L.showStr()
 
-print(L.isStrEmpty())
-print('')
-print(L.strLen())
-'''
-L.cleanStr()
-L.showStr()
-print('')
+	print(L.isStrEmpty())
+	print(L.strLen())
 
-print(L.isStrEmpty())
-print('')
-'''
-print(isSeqStr(1))
-print(isSeqStr(L))
+	print(isSeqStr(1))
+	print(isSeqStr(L))
 
-print('copy')
-S = SeqString(7)
-strCopy(L, S)
-S.showStr()
-print('')
+	print('copy')
+	S = SeqString(7)
+	strCopy(L, S)
+	S.showStr()
 
-A = strAssign('abc')
-A.showStr()
-print('')
+	A = strAssign('abc')
+	A.showStr()
 
-print(strCompare(A, L))
+	print(strCompare(A, L))
 
-A.showStr()
-L.showStr()
-print('')
-B = concat(A, L)
-B.showStr()
-print('')
+	A.showStr()
+	L.showStr()
 
-C = subStr(B, 1, 2)
-C.showStr()
-print('')
+	B = concat(A, L)
+	B.showStr()
 
 
-print(index(B, C, 2))
+	C = subStr(B, 1, 2)
+	C.showStr()
 
-strInsert(L, 4, C)
-print('')
-L.showStr()
 
-'''
-print('')
-strDelete(L, 4, 2)
-print(index(L, C, 2))
-L.showStr()
-'''
 
-L.showStr()
-print('L')
-S.showStr()
-print('S')
-A.showStr()
-print('A')
-B.showStr()
-print('B')
-C.showStr()
-print('C')
-print('=============')
-D = SeqString(data = 'XXXXXX')
-L.showStr()
-print('L')
-replace(L, A, D)
-L.showStr()
-print('L')
+	print(index(B, C, 2))
+
+	strInsert(L, 4, C)
+
+	L.showStr()
+
+	L.showStr()
+	print('L')
+	S.showStr()
+	print('S')
+	A.showStr()
+	print('A')
+	B.showStr()
+	print('B')
+	C.showStr()
+	print('C')
+	print('=============')
+	D = SeqString(data = 'XXXXXX')
+	L.showStr()
+	print('L')
+	replace(L, A, D)
+	L.showStr()
+	print('L')
+
+if __name__ == '__main__':
+	test()
