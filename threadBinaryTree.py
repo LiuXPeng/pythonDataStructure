@@ -85,7 +85,7 @@ def Bitree2Thbitree(BT):
 	return res
 
 
-
+#test
 def test():
 	S = ['A', 'B', '#', 'D', '#', '#', 'C', '#', '#']
 	T = binaryTree.preOrderCreate(S)
@@ -114,5 +114,6 @@ def test():
 	tree.preOrderTraverse()#前序遍历
 	U = Bitree2Thbitree(tree)
 	InOrderTraverse_Thr(U)#中序遍历，所以不一样
+
 if __name__ == '__main__':
 	test()
