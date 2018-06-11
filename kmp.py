@@ -5,7 +5,7 @@
 
 __author__ = 'lxp'
 
-#《大话数据结构》133页
+#《大话数据结构》141页
 #基本结构参考sequence string
 class SeqString(object):
 	def __init__(self, maxSize = 30, data = ""):##
