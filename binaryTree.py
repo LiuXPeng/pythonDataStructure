@@ -5,6 +5,8 @@
 
 __author__ = 'lxp'
 
+#《大话数据结构》174页
+
 class BitNode(object):
 	def __init__(self, data):
 		self.data = data
